@@ -10,10 +10,14 @@ from contextlib import asynccontextmanager
 from functools import lru_cache
 
 # Thư viện FastAPI (Nhanh hơn Flask)
-# Cài đặt: pip install fastapi uvicorn requests
+# Cài đặt: pip install fastapi uvicorn requests python-dotenv
 from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+
+# Load environment variables from .env file
+from dotenv import load_dotenv
+load_dotenv()
 
 # ================= 1. CẤU HÌNH (ĐÃ ĐIỀN THÔNG TIN CỦA BẠN) =================
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
